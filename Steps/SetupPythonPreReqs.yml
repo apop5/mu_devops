@@ -21,11 +21,6 @@ parameters:
 
 steps:
 
-- ${{ if eq(parameters.install_python, true) }}:
-  - task: UsePythonVersion@0
-    inputs:
-      versionSpec: ">=3.10"
-
 - ${{ if eq(parameters.install_pip_modules, true) }}:
   - script: python -m pip install --upgrade pip setuptools wheel
     displayName: Install Wheel and SetupTools
