@@ -47,8 +47,6 @@ steps:
     publishLocation: 'pipeline' 
   condition: succeededOrFailed()
 
-    
-rectory as a named artifact for the current run.
 - task: PublishPipelineArtifact@1
   continueOnError: true
   inputs:
