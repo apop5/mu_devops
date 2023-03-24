@@ -44,4 +44,15 @@ steps:
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)/Logs'
     artifactName: 'Logs ${{ parameters.artifacts_identifier }}'
+    publishLocation: 'pipeline' 
+  condition: succeededOrFailed()
+
+    
+rectory as a named artifact for the current run.
+- task: PublishPipelineArtifact@1
+  continueOnError: true
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)/Logs' # string. Alias: path. Required. File or directory path. Default: $(Pipeline.Workspace).
+    artifact: 'Logs ${{ parameters.artifacts_identifier }} 1'  
+    publishLocation: 'pipeline' # 'pipeline' | 'filepath'. Alias: artifactType. Required. Artifact publish location. Default: pipeline.
   condition: succeededOrFailed()
