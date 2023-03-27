@@ -6,26 +6,30 @@
 ##
 
 parameters:
-- name: install_pip_modules
-  displayName: Install PIP Modules
-  type: boolean
-  default: true
-- name: install_python
-  displayName: Install Python
-  type: boolean
-  default: true
-- name: pip_requirement_files
-  displayName: Pip Requirement Files
-  type: string
-  default: -r pip-requirements.txt
+  - name: install_pip_modules
+    displayName: Install PIP Modules
+    type: boolean
+    default: true
+  - name: install_python
+    displayName: Install Python
+    type: boolean
+    default: true
+  - name: pip_requirement_files
+    displayName: Pip Requirement Files
+    type: string
+    default: -r pip-requirements.txt
 
 steps:
+  - ${{ if eq(parameters.install_python, true) }}:
+      - task: UsePythonVersion@0
+        inputs:
+          versionSpec: ">=3.11"
 
-- ${{ if eq(parameters.install_pip_modules, true) }}:
-  - script: python -m pip install --upgrade pip setuptools wheel
-    displayName: Install Wheel and SetupTools
-    condition: succeeded()
+  - ${{ if eq(parameters.install_pip_modules, true) }}:
+      - script: python -m pip install --upgrade pip setuptools wheel
+        displayName: Install Wheel and SetupTools
+        condition: succeeded()
 
-  - script: pip install ${{ parameters.pip_requirement_files }} --upgrade
-    displayName: Install and Upgrade pip Modules
-    condition: succeeded()
+      - script: pip install ${{ parameters.pip_requirement_files }} --upgrade
+        displayName: Install and Upgrade pip Modules
+        condition: succeeded()
