@@ -163,7 +163,7 @@ parameters:
       clean: all
 
     pool:
-      vmImage: "windows-latest"
+      type: linux
 
     steps:
       - template: ../Steps/PublishCodeCoverage.yml
