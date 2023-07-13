@@ -108,9 +108,6 @@ parameters:
   - ${{ each item in parameters.build_matrix }}:
       - job: Build_${{ item.Key }}
         timeoutInMinutes: 120
-        condition: |
-          and(not(Canceled()),
-              or(${{ ne(item.Value.SelfHostAgent, true) }}, ne(variables['${{ parameters.pool_name }}'], '')))
 
         workspace:
           clean: all
