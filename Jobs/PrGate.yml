@@ -103,14 +103,31 @@ parameters:
     #   ArchList: 'IA32,X64'
     #   SelfHostAgent: true
 
+  # Build step
+
   - ${{ each item in parameters.build_matrix }}:
       - job: Build_${{ item.Key }}
         timeoutInMinutes: 120
-        pool:
-          type: linux
+        condition: |
+          and(not(Canceled()),
+              or(${{ ne(item.Value.SelfHostAgent, true) }}, ne(variables['${{ parameters.pool_name }}'], '')))
 
         workspace:
           clean: all
+
+        ${{ if eq(item.Value.SelfHostAgent, true) }}:
+          pool:
+            name: $(${{ parameters.pool_name }})
+            demands:
+              - Agent.OS -equals ${{ parameters.os_type }}
+        ${{ else }}:
+          pool: ${{ parameters.vm_image }}
+
+        # Use a container if one was specified.
+        ? ${{ if and(eq(parameters.container_build, true), not(contains(parameters.vm_image, 'windows')), ne(item.Value.SelfHostAgent, true)) }}
+        : container:
+            image: ${{ parameters.linux_container_image }}
+            options: ${{ parameters.linux_container_options }}
 
         steps:
           - ${{ parameters.extra_steps }}
@@ -136,11 +153,17 @@ parameters:
                 self_host_agent: false
               extra_build_args: CODE_COVERAGE=TRUE
 
-      - job: PublishCoverage
-        dependsOn:
-          - ${{ each item in parameters.build_matrix }}:
-              - Build_${{ item.Key }}
-        condition: and(not(Canceled()), not(Failed()))
+  - job: PublishCoverage
+    dependsOn:
+      - ${{ each item in parameters.build_matrix }}:
+          - Build_${{ item.Key }}
+    condition: and(not(Canceled()), not(Failed()))
 
-        steps:
-          - template: ../Steps/PublishCodeCoverage.yml
+    workspace:
+      clean: all
+
+    pool:
+      vmImage: "windows-latest"
+
+    steps:
+      - template: ../Steps/PublishCodeCoverage.yml
