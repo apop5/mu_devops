@@ -7,165 +7,147 @@
 ##
 
 parameters:
-- name: build_file
-  displayName: Stuart Build File
-  type: string
-  default: ".pytool/CISettings.py"
-- name: container_build
-  displayName: Use Container for Build
-  type: boolean
-  default: false
-- name: do_ci_build
-  displayName: Perform Stuart CI Build
-  type: boolean
-  default: true
-- name: do_ci_setup
-  displayName: Perform Stuart CI Setup
-  type: boolean
-  default: true
-- name: do_non_ci_build
-  displayName: Perform non-CI Stuart Build
-  type: boolean
-  default: false
-- name: do_non_ci_setup
-  displayName: Perform non-CI Stuart Setup
-  type: boolean
-  default: false
-- name: do_pr_eval
-  displayName: Perform Stuart PR Evaluation
-  type: boolean
-  default: true
-- name: extra_steps
-  displayName: Extra Steps
-  type: stepList
-  default:
-    - script: echo No extra steps provided
-- name: linux_container_image
-  displayName: Linux Container Image
-  type: string
-  default: ''
-- name: linux_container_options
-  displayName: Linux Container Options
-  type: string
-  default: ''
-- name: packages
-  displayName: Packages
-  type: string
-  default: ''
-- name: target_list
-  displayName: Targets (e.g. DEBUG, RELEASE)
-  type: string
-  default: ''
-- name: tool_chain_tag
-  displayName: Tool Chain (e.g. VS2022)
-  type: string
-  default: ''
-- name: vm_image
-  displayName: Virtual Machine Image (e.g. windows-latest)
-  type: string
-  default: 'windows-latest'
-- name: extra_install_step
-  displayName: Extra Install Steps
-  type: stepList
-  default: []
-- name: pool_name
-  displayName: Variable name that hosts pool name to be used for self-hosted agents
-  type: string
-  default: ''
-- name: os_type
-  displayName: OS type on the self-hosted agent pools
-  type: string
-  values:
-  - Windows_NT
-  - Linux
-  default: Windows_NT
-- name: build_matrix
-  type: object
-  # Each element in the matrix will be used in a separate job
-  # Required fields:
-  # Pkgs:           Specify what packages in the target repo are to be built for this job
-  # Targets:        Specify which targets are to be built in this job, i.e. DEBUG,
-  #                 RELEASE, NO-TARGET, NOOPT. The acceptable values depend on the
-  #                 Pkgs to be built.
-  # ArchList:       List of architectures to be supported by the packages (e.g. IA32, X64)
-  # Optional fields:
-  # SelfHostAgent:  A boolean indicating whether this job should be run on the selfhosted
-  #                 "pool_name". If the matrix entry does not specify this element, it
-  #                 will be treated as false.
-  # Example:
-  # TARGET_MDEMODULE_DEBUG:
-  #   Pkgs: 'MdeModulePkg'
-  #   Targets: 'DEBUG,NOOPT'
-  #   ArchList: 'IA32,X64,AARCH64'
-  # TARGET_TEST_POLICY_ARM:
-  #   Pkgs: 'UnitTestFrameworkPkg,PolicyServicePkg'
-  #   Targets: 'DEBUG,RELEASE,NO-TARGET,NOOPT'
-  #   ArchList: 'IA32,X64'
-  #   SelfHostAgent: true
+  - name: build_file
+    displayName: Stuart Build File
+    type: string
+    default: ".pytool/CISettings.py"
+  - name: container_build
+    displayName: Use Container for Build
+    type: boolean
+    default: false
+  - name: do_ci_build
+    displayName: Perform Stuart CI Build
+    type: boolean
+    default: true
+  - name: do_ci_setup
+    displayName: Perform Stuart CI Setup
+    type: boolean
+    default: true
+  - name: do_non_ci_build
+    displayName: Perform non-CI Stuart Build
+    type: boolean
+    default: false
+  - name: do_non_ci_setup
+    displayName: Perform non-CI Stuart Setup
+    type: boolean
+    default: false
+  - name: do_pr_eval
+    displayName: Perform Stuart PR Evaluation
+    type: boolean
+    default: true
+  - name: extra_steps
+    displayName: Extra Steps
+    type: stepList
+    default:
+      - script: echo No extra steps provided
+  - name: linux_container_image
+    displayName: Linux Container Image
+    type: string
+    default: ""
+  - name: linux_container_options
+    displayName: Linux Container Options
+    type: string
+    default: ""
+  - name: packages
+    displayName: Packages
+    type: string
+    default: ""
+  - name: target_list
+    displayName: Targets (e.g. DEBUG, RELEASE)
+    type: string
+    default: ""
+  - name: tool_chain_tag
+    displayName: Tool Chain (e.g. VS2022)
+    type: string
+    default: ""
+  - name: vm_image
+    displayName: Virtual Machine Image (e.g. windows-latest)
+    type: string
+    default: "windows-latest"
+  - name: extra_install_step
+    displayName: Extra Install Steps
+    type: stepList
+    default: []
+  - name: pool_name
+    displayName: Variable name that hosts pool name to be used for self-hosted agents
+    type: string
+    default: ""
+  - name: os_type
+    displayName: OS type on the self-hosted agent pools
+    type: string
+    values:
+      - Windows_NT
+      - Linux
+    default: Windows_NT
+  - name: build_matrix
+    type: object
+    # Each element in the matrix will be used in a separate job
+    # Required fields:
+    # Pkgs:           Specify what packages in the target repo are to be built for this job
+    # Targets:        Specify which targets are to be built in this job, i.e. DEBUG,
+    #                 RELEASE, NO-TARGET, NOOPT. The acceptable values depend on the
+    #                 Pkgs to be built.
+    # ArchList:       List of architectures to be supported by the packages (e.g. IA32, X64)
+    # Optional fields:
+    # SelfHostAgent:  A boolean indicating whether this job should be run on the selfhosted
+    #                 "pool_name". If the matrix entry does not specify this element, it
+    #                 will be treated as false.
+    # Example:
+    # TARGET_MDEMODULE_DEBUG:
+    #   Pkgs: 'MdeModulePkg'
+    #   Targets: 'DEBUG,NOOPT'
+    #   ArchList: 'IA32,X64,AARCH64'
+    # TARGET_TEST_POLICY_ARM:
+    #   Pkgs: 'UnitTestFrameworkPkg,PolicyServicePkg'
+    #   Targets: 'DEBUG,RELEASE,NO-TARGET,NOOPT'
+    #   ArchList: 'IA32,X64'
+    #   SelfHostAgent: true
 
-# Build step
-jobs:
+  - ${{ each item in parameters.build_matrix }}:
+      - job: Build_${{ item.Key }}
+        timeoutInMinutes: 120
+        condition: |
+          and(not(Canceled()),
+              or(${{ ne(item.Value.SelfHostAgent, true) }}, ne(variables['${{ parameters.pool_name }}'], '')))
 
-- ${{ each item in parameters.build_matrix }}:
-  - job: Build_${{ item.Key }}
-    timeoutInMinutes: 120
-    condition: |
-      and(not(Canceled()),
-          or(${{ ne(item.Value.SelfHostAgent, true) }}, ne(variables['${{ parameters.pool_name }}'], '')))
+        workspace:
+          clean: all
+
+        steps:
+          - ${{ parameters.extra_steps }}
+          - template: ../Steps/PrGate.yml
+            parameters:
+              artifacts_identifier: "${{ item.Key }} ${{ item.Value.Targets }}"
+              build_file: ${{ parameters.build_file }}
+              build_pkgs: ${{ item.Value.Pkgs }}
+              build_targets: ${{ item.Value.Targets }}
+              build_archs: ${{ item.Value.ArchList }}
+              do_ci_build: ${{ parameters.do_ci_build }}
+              do_ci_setup: ${{ parameters.do_ci_setup }}
+              do_non_ci_build: ${{ parameters.do_non_ci_build }}
+              do_non_ci_setup: ${{ parameters.do_non_ci_setup }}
+              do_pr_eval: ${{ parameters.do_pr_eval }}
+              tool_chain_tag: ${{ parameters.tool_chain_tag }}
+              install_tools: ${{ and(not(eq(item.Value.SelfHostAgent, true)), not(parameters.container_build)) }}
+              extra_install_step: ${{ parameters.extra_install_step }}
+              # This is to handle the matrices that do not specify this.
+              ${{ if eq(item.Value.SelfHostAgent, true) }}:
+                self_host_agent: true
+              ${{ else }}:
+                self_host_agent: false
+              extra_build_args: CODE_COVERAGE=TRUE
+
+  - job: PublishCoverage
+    dependsOn:
+      - ${{ each item in parameters.build_matrix }}:
+          - Build_${{ item.Key }}
+    condition: and(not(Canceled()), not(Failed()))
 
     workspace:
       clean: all
 
-    ${{ if eq(item.Value.SelfHostAgent, true) }}:
-      pool:
-        name: $(${{ parameters.pool_name }})
-        demands:
-        - Agent.OS -equals ${{ parameters.os_type }}
-    ${{ else }}:
-      pool:
-        vmImage: ${{ parameters.vm_image }}
-
-    # Use a container if one was specified.
-    ${{ if and(eq(parameters.container_build, true), not(contains(parameters.vm_image, 'windows')), ne(item.Value.SelfHostAgent, true)) }}:
-      container:
-        image: ${{ parameters.linux_container_image }}
-        options: ${{ parameters.linux_container_options }}
+    pool:
+      vmImage: "windows-latest"
 
     steps:
-    - ${{ parameters.extra_steps }}
-    - template: ../Steps/PrGate.yml
-      parameters:
-        artifacts_identifier: '${{ item.Key }} ${{ item.Value.Targets }}'
-        build_file: ${{ parameters.build_file }}
-        build_pkgs: ${{ item.Value.Pkgs }}
-        build_targets: ${{ item.Value.Targets }}
-        build_archs: ${{ item.Value.ArchList }}
-        do_ci_build: ${{ parameters.do_ci_build }}
-        do_ci_setup: ${{ parameters.do_ci_setup }}
-        do_non_ci_build: ${{ parameters.do_non_ci_build }}
-        do_non_ci_setup: ${{ parameters.do_non_ci_setup }}
-        do_pr_eval: ${{ parameters.do_pr_eval }}
-        tool_chain_tag: ${{ parameters.tool_chain_tag }}
-        install_tools: ${{ and(not(eq(item.Value.SelfHostAgent, true)), not(parameters.container_build)) }}
-        extra_install_step: ${{ parameters.extra_install_step }}
-        # This is to handle the matrices that do not specify this.
-        ${{ if eq(item.Value.SelfHostAgent, true) }}:
-          self_host_agent: true
-        ${{ else }}:
-          self_host_agent: false
-        extra_build_args: CODE_COVERAGE=TRUE
-
-- job: PublishCoverage
-  dependsOn:
-  - ${{ each item in parameters.build_matrix }}:
-    - Build_${{ item.Key }}
-  condition: and(not(Canceled()), not(Failed()))
-
-  workspace:
-    clean: all
-
-  pool:
-    vmImage: 'windows-latest'
-
-  steps:
-    - template: ../Steps/PublishCodeCoverage.yml
+      - template: ../Steps/PublishCodeCoverage.yml
