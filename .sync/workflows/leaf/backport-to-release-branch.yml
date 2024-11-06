@@ -179,7 +179,39 @@ on:
     - name: Push to ${{ steps.backport_info.outputs.target_branch_name }} if No Conflicts
       if: steps.backport_check.outputs.backport_needed == 'true' && env.merge_conflict == 'false'
       run: |
+        const workflowId = "release-draft.yml";
+        const ref = "${{ steps.backport_info.outputs.target_branch_name }}";
+        const owner = context.repo.owner;
+        const repo = context.repo.repo;
+
+        // Try for 10 minutes. It should only take a few seconds
+        let maxAttempts = 40;
+        let attempt = 0;
+        let completed = false
+
         git push origin ${{ steps.backport_info.outputs.target_branch_name }}:${{ steps.backport_info.outputs.target_branch_name }}
+
+        while (attempt < maxAttempts && !completed) {
+          await new Promise(resolve => setTimeout(resolve, 15000));
+          const runs = await github.rest.actions.listWorkflowRuns({
+            owner,
+            repo,
+            workflow_id: workflowId,
+            branch: ref,
+            event: 'push',
+            status: 'in_progress',
+          });
+
+          if (runs.data.workflow_runs.length === 0) {
+            completed = true;
+          } else {
+            attempt++;
+          }
+        }
+        
+        if (!completed) {
+          core.setFailed("Release Drafter did not complete in time. Please perform the release manually.");
+        }
 
     - name: Generate a Unique PR Branch Name (On Merge Conflict)
       if: steps.backport_check.outputs.backport_needed == 'true' && env.merge_conflict == 'true'
