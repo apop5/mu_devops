@@ -75,6 +75,15 @@ group:
     - source: .sync/dependabot/actions-pip.yml
       dest: .github/dependabot.yml
       template:
+        additionallabels: 
+    repos: |
+      apop5/mu_devops
+
+# dependabot - Track GitHub Actions and PIP Modules (dev/release branches)
+  - files:
+    - source: .sync/dependabot/actions-pip.yml
+      dest: .github/dependabot.yml
+      template:
         additionallabels: '- "type:backport"'
     repos: |
       apop5/mu_basecore
