@@ -33,19 +33,19 @@ group:
       dest: .azurepipelines/MuDevOpsWrapper.yml
       template: true
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_platforms
-      microsoft/mu_tiano_plus
-      microsoft/mu_feature_config
-      microsoft/mu_oem_sample
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_mm_supv
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_platforms
+      apop5/mu_tiano_plus
+      apop5/mu_feature_config
+      apop5/mu_oem_sample
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_mm_supv
 
 # Azure Pipelines - Ignored Repos
 #   - microsoft/mu
@@ -65,25 +65,25 @@ group:
         allowed_elements:
           - br
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_crypto_release
-      microsoft/mu_devops
-      microsoft/mu_feature_config
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_uefi_variable
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_platforms
-      microsoft/mu_tiano_plus
-      microsoft/secureboot_objects
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_crypto_release
+      apop5/mu_devops
+      apop5/mu_feature_config
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_uefi_variable
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_platforms
+      apop5/mu_tiano_plus
+      apop5/secureboot_objects
 
 # CI Configuration - Markdown Lint - Mu Documentation Repo Settings
   - files:
@@ -95,7 +95,7 @@ group:
           - center
           - img
     repos: |
-      microsoft/mu
+      apop5/mu
 
 # CI Configuration - Markdown Lint - Mu MM Supervisor Repo Settings
   - files:
@@ -107,7 +107,7 @@ group:
           - SmmCategory
           - PolicyAccessAttribute
     repos: |
-      microsoft/mu_feature_mm_supv
+      apop5/mu_feature_mm_supv
 
 # Containers - Dockerfiles
   - files:
@@ -118,7 +118,7 @@ group:
       dest: Containers/Ubuntu-22/Dockerfile
       template: true
     repos: |
-      microsoft/mu_devops
+      apop5/mu_devops
 
 # dependabot - Track GitHub Actions and PIP Modules
   - files:
@@ -127,17 +127,17 @@ group:
       template:
         additionallabels: ""
     repos: |
-      microsoft/mu_devops
-      microsoft/mu_feature_config
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_mm_supv
-      microsoft/mu_feature_uefi_variable
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
-      microsoft/secureboot_objects
+      apop5/mu_devops
+      apop5/mu_feature_config
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_mm_supv
+      apop5/mu_feature_uefi_variable
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
+      apop5/secureboot_objects
 
 # dependabot - Track GitHub Actions and PIP Modules (dev/release branches)
   - files:
@@ -146,14 +146,14 @@ group:
       template:
         additionallabels: "- \"type:backport\""
     repos: |
-      microsoft/mu
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 
 # dependabot - Track GitHub Actions, PIP Modules, and Git Submodules
@@ -161,51 +161,51 @@ group:
     - source: .sync/dependabot/actions-pip-submodules.yml
       dest: .github/dependabot.yml
     repos: |
-      microsoft/mu_tiano_platforms
+      apop5/mu_tiano_platforms
 
 # Development Container - Common for CI based repos
   - files:
     - source: .sync/devcontainer/devcontainer.json
       dest: .devcontainer/devcontainer.json
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_crypto_release
-      microsoft/mu_feature_config
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_uefi_variable
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
-      microsoft/mu_feature_mm_supv
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_crypto_release
+      apop5/mu_feature_config
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_uefi_variable
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
+      apop5/mu_feature_mm_supv
 
 # Git Templates - .gitattributes
   - files:
     - source: .sync/git_templates/gitattributes_template.txt
       dest: .gitattributes
     repos: |
-      microsoft/mu
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_feature_config
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_mm_supv
-      microsoft/mu_feature_uefi_variable
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_platforms
-      microsoft/mu_tiano_plus
+      apop5/mu
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_feature_config
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_mm_supv
+      apop5/mu_feature_uefi_variable
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_platforms
+      apop5/mu_tiano_plus
 
 # GitHub Actions - In the Local Repo
   - files:
@@ -213,31 +213,31 @@ group:
       dest: .github/actions/submodule-release-updater/action.yml
       template: true
     repos: |
-      microsoft/mu_devops
+      apop5/mu_devops
 
 # GitHub Templates - Contributing
   - files:
     - source: .sync/github_templates/contributing/CONTRIBUTING.md
       dest: CONTRIBUTING.md
     repos: |
-      microsoft/mu
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_feature_config
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_mm_supv
-      microsoft/mu_feature_uefi_variable
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_platforms
-      microsoft/mu_tiano_plus
+      apop5/mu
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_feature_config
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_mm_supv
+      apop5/mu_feature_uefi_variable
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_platforms
+      apop5/mu_tiano_plus
 
 # GitHub Templates - Issues
 #
@@ -246,95 +246,95 @@ group:
     - source: .sync/github_templates/ISSUE_TEMPLATE/
       dest: .github/ISSUE_TEMPLATE/
     repos: |
-      microsoft/mu
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_crypto_release
-      microsoft/mu_feature_config
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_mm_supv
-      microsoft/mu_feature_uefi_variable
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_platforms
-      microsoft/mu_tiano_plus
-      microsoft/secureboot_objects
+      apop5/mu
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_crypto_release
+      apop5/mu_feature_config
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_mm_supv
+      apop5/mu_feature_uefi_variable
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_platforms
+      apop5/mu_tiano_plus
+      apop5/secureboot_objects
 
 # GitHub Templates - Licensing - Project Mu License
   - files:
     - source: .sync/github_templates/licensing/project_mu_license.txt
       dest: LICENSE.txt
     repos: |
-      microsoft/mu
-      microsoft/mu_crypto_release
-      microsoft/mu_devops
-      microsoft/mu_feature_config
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_mm_supv
-      microsoft/mu_feature_uefi_variable
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
+      apop5/mu
+      apop5/mu_crypto_release
+      apop5/mu_devops
+      apop5/mu_feature_config
+      apop5/mu_feature_dfci
+      apop5/mu_feature_mm_supv
+      apop5/mu_feature_uefi_variable
+      apop5/mu_oem_sample
+      apop5/mu_plus
 
 # GitHub Templates - Licensing - Project Mu License - Bot Requires LICENSE file
   - files:
     - source: .sync/github_templates/licensing/project_mu_license.txt
       dest: LICENSE
     repos: |
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
 
 # GitHub Templates - Licensing - Project Mu and TianoCore License
   - files:
     - source: .sync/github_templates/licensing/project_mu_and_tianocore_license.txt
       dest: License.txt
     repos: |
-      microsoft/mu_feature_ipmi
-      microsoft/mu_tiano_platforms
+      apop5/mu_feature_ipmi
+      apop5/mu_tiano_platforms
 
 # GitHub Templates - Licensing - TianoCore License
   - files:
     - source: .sync/github_templates/licensing/tianocore_license.txt
       dest: License.txt
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # GitHub Templates - Security Policy
   - files:
     - source: .sync/github_templates/security/SECURITY.md
       dest: SECURITY.md
     repos: |
-      microsoft/mu
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_crypto_release
-      microsoft/mu_devops
-      microsoft/mu_feature_config
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_mm_supv
-      microsoft/mu_feature_uefi_variable
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_platforms
-      microsoft/mu_tiano_plus
+      apop5/mu
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_crypto_release
+      apop5/mu_devops
+      apop5/mu_feature_config
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_mm_supv
+      apop5/mu_feature_uefi_variable
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_platforms
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - Apply Labels
   - files:
@@ -346,25 +346,25 @@ group:
     - source: .sync/workflows/config/label-issues/regex-pull-requests.yml
       dest: .github/workflows/label-issues/regex-pull-requests.yml
     repos: |
-      microsoft/mu
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_crypto_release
-      microsoft/mu_feature_config
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_mm_supv
-      microsoft/mu_feature_uefi_variable
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_platforms
-      microsoft/mu_tiano_plus
+      apop5/mu
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_crypto_release
+      apop5/mu_feature_config
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_mm_supv
+      apop5/mu_feature_uefi_variable
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_platforms
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - Auto Merger
   - files:
@@ -372,26 +372,26 @@ group:
       dest: .github/workflows/auto-merge.yml
       template: true
     repos: |
-      microsoft/mu
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_crypto_release
-      microsoft/mu_devops
-      microsoft/mu_feature_config
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_mm_supv
-      microsoft/mu_feature_uefi_variable
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_platforms
-      microsoft/mu_tiano_plus
+      apop5/mu
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_crypto_release
+      apop5/mu_devops
+      apop5/mu_feature_config
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_mm_supv
+      apop5/mu_feature_uefi_variable
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_platforms
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - Auto Approver
   - files:
@@ -399,23 +399,23 @@ group:
       dest: .github/workflows/auto-approve.yml
       template: true
     repos: |
-      microsoft/mu
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_crypto_release
-      microsoft/mu_devops
-      microsoft/mu_feature_config
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_mm_supv
-      microsoft/mu_feature_uefi_variable
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_platforms
-      microsoft/mu_tiano_plus
+      apop5/mu
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_crypto_release
+      apop5/mu_devops
+      apop5/mu_feature_config
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_mm_supv
+      apop5/mu_feature_uefi_variable
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_platforms
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - Backport Dev Branch Changes to Release Branch
   - files:
@@ -423,13 +423,13 @@ group:
       dest: .github/workflows/backport-to-release-branch.yml
       template: true
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - CodeQL
 # Note: This workflow should be used in repos that build firmware
@@ -442,17 +442,17 @@ group:
       dest: .github/workflows/codeql.yml
       template: true
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_feature_config
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_mm_supv
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_feature_config
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_mm_supv
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - CodeQL - Platform
 # Note: This workflow should be used in repos that build firmware
@@ -465,7 +465,7 @@ group:
       dest: .github/workflows/codeql-platform.yml
       template: true
     repos: |
-      microsoft/mu_tiano_platforms
+      apop5/mu_tiano_platforms
 
 # Leaf Workflow - Issue Triage
 # Leaf Workflow - Issue Assignment
@@ -485,26 +485,26 @@ group:
       dest: .github/workflows/issue-assignment.yml
       template: true
     repos: |
-      microsoft/mu
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_crypto_release
-      microsoft/mu_feature_config
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_mm_supv
-      microsoft/mu_feature_uefi_variable
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_platforms
-      microsoft/mu_tiano_plus
-      microsoft/secureboot_objects
+      apop5/mu
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_crypto_release
+      apop5/mu_feature_config
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_mm_supv
+      apop5/mu_feature_uefi_variable
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_platforms
+      apop5/mu_tiano_plus
+      apop5/secureboot_objects
 
 # Leaf Workflow - Label Sync
   - files:
@@ -512,27 +512,27 @@ group:
       dest: .github/workflows/label-sync.yml
       template: true
     repos: |
-      microsoft/mu
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_crypto_release
-      microsoft/mu_devops
-      microsoft/mu_feature_config
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_mm_supv
-      microsoft/mu_feature_uefi_variable
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_platforms
-      microsoft/mu_tiano_plus
-      microsoft/secureboot_objects
+      apop5/mu
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_crypto_release
+      apop5/mu_devops
+      apop5/mu_feature_config
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_mm_supv
+      apop5/mu_feature_uefi_variable
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_platforms
+      apop5/mu_tiano_plus
+      apop5/secureboot_objects
 
 # Leaf Workflow - Mark Stale Issues and Pull Requests
   - files:
@@ -540,26 +540,26 @@ group:
       dest: .github/workflows/stale.yml
       template: true
     repos: |
-      microsoft/mu
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_crypto_release
-      microsoft/mu_feature_config
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_mm_supv
-      microsoft/mu_feature_uefi_variable
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_platforms
-      microsoft/mu_tiano_plus
-      microsoft/secureboot_objects
+      apop5/mu
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_crypto_release
+      apop5/mu_feature_config
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_mm_supv
+      apop5/mu_feature_uefi_variable
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_platforms
+      apop5/mu_tiano_plus
+      apop5/secureboot_objects
 
 # Leaf Workflow - Mark Stale Issues and Pull Requests (Mu DevOps Adjustment)
 # Prevents the reusable workflow file from being overwritten by the leaf workflow
@@ -569,42 +569,42 @@ group:
       dest: .github/workflows/stale-leaf.yml
       template: true
     repos: |
-      microsoft/mu_devops
+      apop5/mu_devops
 
 # Leaf Workflow - Publish Release
   - files:
     - source: .sync/workflows/leaf/publish-release.yml
       dest: .github/workflows/publish-release.yml
     repos: |
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
 
 # Leaf Workflow - Pull Request Validator
   - files:
     - source: .sync/workflows/leaf/pull-request-formatting-validator.yml
       dest: .github/workflows/pull-request-formatting-validator.yml
     repos: |
-      microsoft/mu
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_crypto_release
-      microsoft/mu_devops
-      microsoft/mu_feature_config
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_mm_supv
-      microsoft/mu_feature_uefi_variable
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_platforms
-      microsoft/mu_tiano_plus
+      apop5/mu
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_crypto_release
+      apop5/mu_devops
+      apop5/mu_feature_config
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_mm_supv
+      apop5/mu_feature_uefi_variable
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_platforms
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - Release Draft
 # Note: The branch name used to draft releases on in this group is
@@ -618,18 +618,18 @@ group:
       dest: .github/release-draft-config.yml
       template: true
     repos: |
-      microsoft/mu_devops
-      microsoft/mu_feature_config
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_mm_supv
-      microsoft/mu_feature_uefi_variable
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
-      microsoft/mu_tiano_platforms
-      microsoft/secureboot_objects
+      apop5/mu_devops
+      apop5/mu_feature_config
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_mm_supv
+      apop5/mu_feature_uefi_variable
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
+      apop5/mu_tiano_platforms
+      apop5/secureboot_objects
 
 # Leaf Workflow - Release Draft
 # Note: This group has two files synced that allow separate configuration for
@@ -664,14 +664,14 @@ group:
         latest: false
         release_branch: true
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_crypto_release
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_crypto_release
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - Scheduled Maintenance
 # Note: This currently sync to the same repos as the label sync since it is exclusively
@@ -680,27 +680,27 @@ group:
     - source: .sync/workflows/leaf/scheduled-maintenance.yml
       dest: .github/workflows/scheduled-maintenance.yml
     repos: |
-      microsoft/mu
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_crypto_release
-      microsoft/mu_devops
-      microsoft/mu_feature_config
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_mm_supv
-      microsoft/mu_feature_uefi_variable
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_platforms
-      microsoft/mu_tiano_plus
-      microsoft/secureboot_objects
+      apop5/mu
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_crypto_release
+      apop5/mu_devops
+      apop5/mu_feature_config
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_mm_supv
+      apop5/mu_feature_uefi_variable
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_platforms
+      apop5/mu_tiano_plus
+      apop5/secureboot_objects
 
 # Leaf Workflow - Submodule Release Update
   - files:
@@ -708,7 +708,7 @@ group:
       dest: .github/workflows/submodule-release-update.yml
       template: true
     repos: |
-      microsoft/mu_tiano_platforms
+      apop5/mu_tiano_platforms
 
 # Pull Request Template - Common Template - Backport Option
   - files:
@@ -718,13 +718,13 @@ group:
         additional_checkboxes:
           - Backport to release branch?
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # Pull Request Template - Common Template
   - files:
@@ -733,17 +733,17 @@ group:
       template:
         additional_checkboxes: []
     repos: |
-      microsoft/mu_crypto_release
-      microsoft/mu_feature_config
-      microsoft/mu_feature_debugger
-      microsoft/mu_feature_dfci
-      microsoft/mu_feature_ipmi
-      microsoft/mu_feature_mm_supv
-      microsoft/mu_feature_uefi_variable
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
-      microsoft/mu_tiano_platforms
+      apop5/mu_crypto_release
+      apop5/mu_feature_config
+      apop5/mu_feature_debugger
+      apop5/mu_feature_dfci
+      apop5/mu_feature_ipmi
+      apop5/mu_feature_mm_supv
+      apop5/mu_feature_uefi_variable
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
+      apop5/mu_tiano_platforms
 
 # Rust - Pipeline Files
   - files:
@@ -754,7 +754,7 @@ group:
       dest: Steps/SetupPythonPreReqs.yml
       template: true
     repos: |
-      microsoft/mu_devops
+      apop5/mu_devops
 
 # Rust - Formatting configuration
   - files:
@@ -764,30 +764,30 @@ group:
     - source: .sync/rust_config/rustfmt.toml
       dest: rustfmt.toml
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_plus
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
-      microsoft/mu_tiano_platforms
+      apop5/mu_basecore
+      apop5/mu_plus
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
+      apop5/mu_tiano_platforms
 
 # Rust - Makefile (for UEFI builds)
   - files:
     - source: .sync/rust_config/Makefile.toml
       dest: Makefile.toml
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_plus
-      microsoft/mu_tiano_platforms
+      apop5/mu_basecore
+      apop5/mu_plus
+      apop5/mu_tiano_platforms
 
 # Rust - Config (for UEFI builds)
   - files:
     - source: .sync/rust_config/config.toml
       dest: .cargo/config.toml
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_plus
-      microsoft/mu_rust_helpers
-      microsoft/mu_rust_hid
-      microsoft/mu_rust_pi
-      microsoft/mu_tiano_platforms
+      apop5/mu_basecore
+      apop5/mu_plus
+      apop5/mu_rust_helpers
+      apop5/mu_rust_hid
+      apop5/mu_rust_pi
+      apop5/mu_tiano_platforms
