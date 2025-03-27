@@ -169,7 +169,6 @@ group:
       template: true
     repos: |
       apop5/mu_basecore
-      apop5/mu_devops
       apop5/mu_plus
 
 # Leaf Workflow - Auto Approver
@@ -179,7 +178,6 @@ group:
       template: true
     repos: |
       apop5/mu_basecore
-      apop5/mu_devops
       apop5/mu_plus
 
 # Leaf Workflow - Backport Dev Branch Changes to Release Branch
@@ -245,16 +243,6 @@ group:
       apop5/mu_basecore
       apop5/mu_plus
 
-# Leaf Workflow - Mark Stale Issues and Pull Requests (Mu DevOps Adjustment)
-# Prevents the reusable workflow file from being overwritten by the leaf workflow
-# file in Mu DevOps.
-  - files:
-    - source: .sync/workflows/leaf/stale.yml
-      dest: .github/workflows/stale-leaf.yml
-      template: true
-    repos: |
-      apop5/mu_devops
-
 
 # Leaf Workflow - Pull Request Validator
   - files:
@@ -263,20 +251,6 @@ group:
     repos: |
       apop5/mu_basecore
       apop5/mu_plus
-
-# Leaf Workflow - Release Draft
-# Note: The branch name used to draft releases on in this group is
-#       set to the value "main"
-  - files:
-    - source: .sync/workflows/leaf/release-draft.yml
-      dest: .github/workflows/release-draft.yml
-      template:
-        trigger_branch_name: 'main'
-    - source: .sync/workflows/config/release-draft/release-draft-config.yml
-      dest: .github/release-draft-config.yml
-      template: true
-    repos: |
-      apop5/mu_devops
 
 # Leaf Workflow - Release Draft
 # Note: This group has two files synced that allow separate configuration for
