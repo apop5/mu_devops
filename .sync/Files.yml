@@ -75,7 +75,7 @@ group:
     - source: .sync/dependabot/actions-pip.yml
       dest: .github/dependabot.yml
       template:
-        additionallabels: "- type:backport"
+        additionallabels: '"- type:backport"''
     repos: |
       apop5/mu_basecore
       apop5/mu_plus
