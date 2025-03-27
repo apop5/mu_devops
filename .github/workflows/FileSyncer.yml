@@ -38,7 +38,7 @@ jobs:
           COMMIT_EACH_FILE: false
           COMMIT_PREFIX: "Repo File Sync:"
           CONFIG_PATH: .sync/Files.yml
-          DRY_RUN: false
+          DRY_RUN: true
           FORK: false
           GH_PAT: ${{ secrets.UEFI_BOT_REPO_FILE_SYNC }}
           GIT_EMAIL: uefibot@microsoft.com
