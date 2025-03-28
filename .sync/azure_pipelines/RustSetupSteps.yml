@@ -135,4 +135,4 @@ steps:
 
 - script: rustup component add rustfmt rust-src --toolchain {{ sync_version.rust_toolchain }}-$(rust_target_triple)
   displayName: rustup add rust-src
-  condition: and(succeeded(), eq(variables['Agent.OS'], 'Windows_NT'))
+
