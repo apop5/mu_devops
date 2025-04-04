@@ -41,8 +41,8 @@ jobs:
           DRY_RUN: false
           FORK: false
           GH_PAT: ${{ secrets.UEFI_BOT_REPO_FILE_SYNC }}
-          GIT_EMAIL: uefibot@microsoft.com
-          GIT_USERNAME: uefibot
+          GIT_EMAIL: aaronpop@microsoft.com
+          GIT_USERNAME: apop5
           ORIGINAL_MESSAGE: true
           OVERWRITE_EXISTING_PR: true
           PR_BODY: |
