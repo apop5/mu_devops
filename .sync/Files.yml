@@ -78,8 +78,6 @@ group:
     repos: |
       apop5/mu_basecore
       apop5/mu_plus
-      apop5/mu_silicon_arm_tiano
-
 
 # Development Container - Common for CI based repos
   - files:
@@ -134,7 +132,6 @@ group:
       dest: License.txt
     repos: |
       apop5/mu_basecore
-      apop5/mu_tiano_plus
 
 # GitHub Templates - Security Policy
   - files:

@@ -52,3 +52,8 @@ jobs:
           enable-versioned-regex: 0
           repo-token: ${{ secrets.GITHUB_TOKEN }}
         if: github.event_name == 'pull_request' || github.event_name == 'pull_request_target'
+      
+      - name: Apply Labels based on PR labels
+        run: |
+          echo "PR labels: ${{ github.event.pull_request.labels }}"
+        if: github.event_name == 'pull_request' || github.event_name == 'pull_request_target'
