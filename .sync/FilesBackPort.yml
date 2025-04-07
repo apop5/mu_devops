@@ -33,13 +33,13 @@ group:
       dest: .azurepipelines/MuDevOpsWrapper.yml
       template: true
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
-      microsoft/mu_oem_sample
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
+      apop5/mu_oem_sample
 
 # CI Configuration - Markdown Lint - Common Settings
   - files:
@@ -49,13 +49,13 @@ group:
         allowed_elements:
           - br
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # dependabot - Track GitHub Actions and PIP Modules (dev/release branches)
   - files:
@@ -64,13 +64,13 @@ group:
       template:
         additionallabels: '- "type:backport"'
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 
 # Development Container - Common for CI based repos
@@ -78,39 +78,39 @@ group:
     - source: .sync/devcontainer/devcontainer.json
       dest: .devcontainer/devcontainer.json
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # Git Templates - .gitattributes
   - files:
     - source: .sync/git_templates/gitattributes_template.txt
       dest: .gitattributes
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # GitHub Templates - Contributing
   - files:
     - source: .sync/github_templates/contributing/CONTRIBUTING.md
       dest: CONTRIBUTING.md
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # GitHub Templates - Issues
 #
@@ -119,45 +119,45 @@ group:
     - source: .sync/github_templates/ISSUE_TEMPLATE/
       dest: .github/ISSUE_TEMPLATE/
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # GitHub Templates - Licensing - Project Mu License
   - files:
     - source: .sync/github_templates/licensing/project_mu_license.txt
       dest: LICENSE.txt
     repos: |
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
+      apop5/mu_oem_sample
+      apop5/mu_plus
 
 # GitHub Templates - Licensing - TianoCore License
   - files:
     - source: .sync/github_templates/licensing/tianocore_license.txt
       dest: License.txt
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # GitHub Templates - Security Policy
   - files:
     - source: .sync/github_templates/security/SECURITY.md
       dest: SECURITY.md
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - Apply Labels
   - files:
@@ -169,13 +169,13 @@ group:
     - source: .sync/workflows/config/label-issues/regex-pull-requests.yml
       dest: .github/workflows/label-issues/regex-pull-requests.yml
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - Auto Merger
   - files:
@@ -183,13 +183,13 @@ group:
       dest: .github/workflows/auto-merge.yml
       template: true
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - Auto Approver
   - files:
@@ -197,13 +197,13 @@ group:
       dest: .github/workflows/auto-approve.yml
       template: true
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - Backport Dev Branch Changes to Release Branch
   - files:
@@ -211,31 +211,31 @@ group:
       dest: .github/workflows/backport-to-release-branch.yml
       template: true
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - CodeQL
 # Note: This workflow should be used in repos that build firmware
 #       packages from a CI builder (i.e. a CISettings.py file).
 # Note: Lack of Visual Studio support is currently a blocker for
 #       enabling the CodeQL workflow as-is in mu_silicon_arm_tiano.
-#       # microsoft/mu_silicon_arm_tiano
+#       # apop5/mu_silicon_arm_tiano
   - files:
     - source: .sync/workflows/leaf/codeql.yml
       dest: .github/workflows/codeql.yml
       template: true
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - Issue Triage
 # Leaf Workflow - Issue Assignment
@@ -255,13 +255,13 @@ group:
       dest: .github/workflows/issue-assignment.yml
       template: true
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - Label Sync
   - files:
@@ -269,13 +269,13 @@ group:
       dest: .github/workflows/label-sync.yml
       template: true
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - Mark Stale Issues and Pull Requests
   - files:
@@ -283,26 +283,26 @@ group:
       dest: .github/workflows/stale.yml
       template: true
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - Pull Request Validator
   - files:
     - source: .sync/workflows/leaf/pull-request-formatting-validator.yml
       dest: .github/workflows/pull-request-formatting-validator.yml
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - Release Draft
 # Note: This group has two files synced that allow separate configuration for
@@ -337,13 +337,13 @@ group:
         latest: false
         release_branch: true
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # Leaf Workflow - Scheduled Maintenance
 # Note: This currently sync to the same repos as the label sync since it is exclusively
@@ -352,13 +352,13 @@ group:
     - source: .sync/workflows/leaf/scheduled-maintenance.yml
       dest: .github/workflows/scheduled-maintenance.yml
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # Pull Request Template - Common Template - Backport Option
   - files:
@@ -368,13 +368,13 @@ group:
         additional_checkboxes:
           - Backport to release branch?
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_common_intel_min_platform
-      microsoft/mu_oem_sample
-      microsoft/mu_plus
-      microsoft/mu_silicon_arm_tiano
-      microsoft/mu_silicon_intel_tiano
-      microsoft/mu_tiano_plus
+      apop5/mu_basecore
+      apop5/mu_common_intel_min_platform
+      apop5/mu_oem_sample
+      apop5/mu_plus
+      apop5/mu_silicon_arm_tiano
+      apop5/mu_silicon_intel_tiano
+      apop5/mu_tiano_plus
 
 # Rust - Formatting configuration
   - files:
@@ -384,21 +384,21 @@ group:
     - source: .sync/rust_config/rustfmt.toml
       dest: rustfmt.toml
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_plus
+      apop5/mu_basecore
+      apop5/mu_plus
 
 # Rust - Makefile (for UEFI builds)
   - files:
     - source: .sync/rust_config/Makefile.toml
       dest: Makefile.toml
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_plus
+      apop5/mu_basecore
+      apop5/mu_plus
 
 # Rust - Config (for UEFI builds)
   - files:
     - source: .sync/rust_config/config.toml
       dest: .cargo/config.toml
     repos: |
-      microsoft/mu_basecore
-      microsoft/mu_plus
+      apop5/mu_basecore
+      apop5/mu_plus
