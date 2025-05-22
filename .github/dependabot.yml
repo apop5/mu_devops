@@ -42,7 +42,10 @@ updates:
     rebase-strategy: "disabled"
 
   - package-ecosystem: "github-actions"
-    directory: "/"
+    directories:
+      - "/"
+      - ".sync"
+      - ".sync/**"
     schedule:
       interval: "weekly"
       day: "monday"
