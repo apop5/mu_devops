@@ -103,7 +103,7 @@ jobs:
         include:
           - archs: {% endraw %}{{ archs }}{% raw %}
 
-          - tool_chain_tag: VS2022
+          - tool_chain_tag: VS2026
 
     steps:
     - name: Checkout repository
